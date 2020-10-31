@@ -7,26 +7,6 @@ root = Tk()
 root.geometry("500x700")
 root.title("Registration Form")
 
-
-img = Image.open('default.png')
-img = img.resize((125,125), Image.ANTIALIAS)
-photo = ImageTk.PhotoImage(img)
-
-lab = Label(image=photo)
-lab.pack()
-
-
-fname = StringVar()
-lname = StringVar()
-dob = StringVar()
-var = StringVar()
-var_c1 = StringVar()
-var_c2 = StringVar()
-var_r = StringVar()
-
-
-
-
 def exitt():
     exit()
 
@@ -58,6 +38,42 @@ def printt():
     print(f"Your programming language: {pl1}, {pl2}")
     print(f"Your gender: {gender}")
     messagebox.showinfo("Wellcome", f"{fn}, You have successfully signed up!!!")
+
+def about():
+    messagebox.showinfo("About", "Hello There!!!!!!!!!!")
+
+menu=Menu(root)
+root.config(menu=menu)
+
+sub_menu1=Menu(menu)
+menu.add_cascade(label="File", menu=sub_menu1)
+sub_menu1.add_command(label="Exit", command=exitt)
+
+sub_menu2=Menu(menu)
+menu.add_cascade(label="Others", menu=sub_menu2)
+sub_menu2.add_command(label="About", command=about)
+
+
+img = Image.open('default.png')
+img = img.resize((125,125), Image.ANTIALIAS)
+photo = ImageTk.PhotoImage(img)
+
+lab = Label(image=photo)
+lab.pack()
+
+
+fname = StringVar()
+lname = StringVar()
+dob = StringVar()
+var = StringVar()
+var_c1 = StringVar()
+var_c2 = StringVar()
+var_r = StringVar()
+
+
+
+
+
 
 
 label_0 = Label(root, text="Registation Form", relief="solid", width=20, font=("arial", 19, "bold"))
